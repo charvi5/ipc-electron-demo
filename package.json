@@ -1,0 +1,19 @@
+{
+  "name": "learning_ipc",
+  "version": "1.0.0",
+  "description": "IPC communication",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron Main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.5"
+  },
+  "dependencies": {
+    "electron-localshortcut": "^3.2.1"
+  }
+}
