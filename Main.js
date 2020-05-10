@@ -1,9 +1,5 @@
 const {app, BrowserWindow, ipcMain, ipcRenderer} = require('electron')
 const path = require('path')
-const appFolder = path.dirname(process.execPath)
-// to open app at login, update name here to app name
-// const updateExe = path.resolve(appFolder, '..', 'Youni Supercharger.exe')
-// const exeName = path.basename(process.execPath)
 
 var mainWindow;
 
@@ -39,15 +35,11 @@ app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
 
-// uncomment to open app at login
-// app.setLoginItemSettings({
-//     openAtLogin: true,
-//     path: updateExe,
-//     args: [
-//         '--processStart', `"${exeName}"`,
-//         '--process-start-args', `"--hidden"`
-//     ]
-// })
+// open app at login
+// path and args here only run for windows
+app.setLoginItemSettings({
+    openAtLogin: true
+})
 
 ipcMain.on('sync-message', (event, arg) => {
     // message receieved from renderer
